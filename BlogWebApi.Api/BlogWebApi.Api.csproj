@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlogWebApi.Application\BlogWebApi.Application.csproj" />
+    <ProjectReference Include="..\BlogWebApi.Domain\BlogWebApi.Domain.csproj" />
+    <ProjectReference Include="..\BlogWebApi.Infrastructure.Data\BlogWebApi.Infrastructure.Data.csproj" />
+  </ItemGroup>
+
+
+</Project>
