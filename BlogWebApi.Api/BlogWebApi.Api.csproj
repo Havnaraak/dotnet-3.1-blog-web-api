@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>6cc9f7f1-178a-4250-b462-85efdbd17bf0</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BlogWebApi.Application\BlogWebApi.Application.csproj" />
     <ProjectReference Include="..\BlogWebApi.Domain\BlogWebApi.Domain.csproj" />
+    <ProjectReference Include="..\BlogWebApi.Infrastructure.CrossCuting\BlogWebApi.Infrastructure.CrossCutting.csproj" />
     <ProjectReference Include="..\BlogWebApi.Infrastructure.Data\BlogWebApi.Infrastructure.Data.csproj" />
   </ItemGroup>
 

@@ -5,12 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Repositories\" />
+    <Compile Remove="Data\Context\ApplicationDbContext.DbSets.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Data\Context\ApplicationDbContext.DbSets.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BlogWebApi.Domain\BlogWebApi.Domain.csproj" />
+    <ProjectReference Include="..\BlogWebApi.Infrastructure.CrossCuting\BlogWebApi.Infrastructure.CrossCutting.csproj" />
   </ItemGroup>
 
 </Project>
