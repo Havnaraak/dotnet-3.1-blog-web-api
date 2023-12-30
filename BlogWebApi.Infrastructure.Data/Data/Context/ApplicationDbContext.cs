@@ -1,4 +1,5 @@
-﻿using BlogWebApi.Infrastructure.CrossCutting.Interfaces;
+﻿using BlogWebApi.Domain.Entities;
+using BlogWebApi.Infrastructure.CrossCutting.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Threading;
@@ -23,9 +24,10 @@ namespace BlogWebApi.Infrastructure.Data.Data.Context
             }
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseNpgsql(_configuration["connection_string"]);
-        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseNpgsql(_configuration["connectionString"]);
+
+        public virtual DbSet<Author> Authors { get; set; }
+
+        public virtual DbSet<Post> Posts { get; set; }
     }
 }
