@@ -7,15 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A4340378-C02
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2071B8AA-F0FA-4DC9-B6FA-5919F9123FE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogWebApi.Domain", "BlogWebApi.Domain\BlogWebApi.Domain.csproj", "{00FED823-A044-4895-9A15-6C2FE8351BA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogWebApi.Domain", "BlogWebApi.Domain\BlogWebApi.Domain.csproj", "{00FED823-A044-4895-9A15-6C2FE8351BA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogWebApi.Application", "BlogWebApi.Application\BlogWebApi.Application.csproj", "{2D3BD48B-9C17-4B0F-9C78-32548057BC0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogWebApi.Application", "BlogWebApi.Application\BlogWebApi.Application.csproj", "{2D3BD48B-9C17-4B0F-9C78-32548057BC0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogWebApi.Infrastructure.Data", "BlogWebApi.Infrastructure.Data\BlogWebApi.Infrastructure.Data.csproj", "{001954AE-70C1-4BEB-9776-F719B68B2029}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogWebApi.Infrastructure.Data", "BlogWebApi.Infrastructure.Data\BlogWebApi.Infrastructure.Data.csproj", "{001954AE-70C1-4BEB-9776-F719B68B2029}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogWebApi.Infrastructure.CrossCuting", "BlogWebApi.Infrastructure.CrossCuting\BlogWebApi.Infrastructure.CrossCuting.csproj", "{9BD36924-43EA-4582-85FC-4FC880EE80BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogWebApi.Infrastructure.CrossCutting", "BlogWebApi.Infrastructure.CrossCuting\BlogWebApi.Infrastructure.CrossCutting.csproj", "{9BD36924-43EA-4582-85FC-4FC880EE80BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogWebApi.Api", "BlogWebApi.Api\BlogWebApi.Api.csproj", "{AA122E35-783A-4018-8D8D-DD11607F5677}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogWebApi.Api", "BlogWebApi.Api\BlogWebApi.Api.csproj", "{AA122E35-783A-4018-8D8D-DD11607F5677}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
