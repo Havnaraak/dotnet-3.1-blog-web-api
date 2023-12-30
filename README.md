@@ -11,6 +11,6 @@ Bibliotecas Utilizadas na API:
 </ul>
 
 A aplicação terá como SGBD o Postgres em sua versão 16.1.
-```docker run -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=1234 -d postgres:16.1```\
+<br/>```docker run -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=1234 -d postgres:16.1```\
 
 Será adotado os princípios SOLID, DDD, CQRS e UnitOfWork
