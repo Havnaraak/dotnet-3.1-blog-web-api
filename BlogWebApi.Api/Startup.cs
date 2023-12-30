@@ -1,5 +1,6 @@
 using BlogWebApi.Infrastructure.CrossCutting.Interfaces;
 using BlogWebApi.Infrastructure.Data.Data.Context;
+using BlogWebApi.Infrastructure.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -22,6 +23,9 @@ namespace BlogWebApi.Api
         {
             services.AddControllers();
             services.AddScoped<IDBContext, ApplicationDbContext>();
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+            services.AddEntityFrameworkNpgsql();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
