@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using BlogWebApi.Application.Interfaces;
-using BlogWebApi.Domain.DTOs;
+using BlogWebApi.Domain.Models;
 using BlogWebApi.Domain.Entities;
 using BlogWebApi.Infrastructure.CrossCutting.Interfaces;
 using MediatR;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BlogWebApi.Application.Authors.Commands.CreateAuthor
 {
-    public class CreateAuthorCommand : IRequest<CreateAuthorCommandResponse>, IMapTo<NewAuthorDTO>
+    public class CreateAuthorCommand : IRequest<CreateAuthorCommandResponse>, IMapTo<NewAuthorModel>
     {
         public string Name { get; set; }
 
@@ -17,7 +17,7 @@ namespace BlogWebApi.Application.Authors.Commands.CreateAuthor
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<CreateAuthorCommand, NewAuthorDTO>(MemberList.Destination);
+            profile.CreateMap<CreateAuthorCommand, NewAuthorModel>(MemberList.Destination);
         }
 
     }
@@ -37,7 +37,8 @@ namespace BlogWebApi.Application.Authors.Commands.CreateAuthor
         {
             var repository = _unitOfWork.GetRepository<Author>();
 
-            var authorDto = _mapper.Map<CreateAuthorCommand, NewAuthorDTO>(request);
+            var authorDto = _mapper.Map<CreateAuthorCommand, NewAuthorModel>(request);
+
             var author = new Author(authorDto);
 
             repository.Add(author);
