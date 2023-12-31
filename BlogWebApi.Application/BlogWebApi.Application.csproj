@@ -6,7 +6,17 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BlogWebApi.Domain\BlogWebApi.Domain.csproj" />
+    <ProjectReference Include="..\BlogWebApi.Infrastructure.CrossCuting\BlogWebApi.Infrastructure.CrossCutting.csproj" />
     <ProjectReference Include="..\BlogWebApi.Infrastructure.Data\BlogWebApi.Infrastructure.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Posts\Commands\" />
+    <Folder Include="Posts\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
   </ItemGroup>
 
 </Project>
