@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogWebApi.Infrastructure.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogWebApi.Api", "BlogWebApi.Api\BlogWebApi.Api.csproj", "{AA122E35-783A-4018-8D8D-DD11607F5677}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogWebApi.Infrastructure.AutoMapper", "BlogWebApi.Infrastructure.AutoMapper\BlogWebApi.Infrastructure.AutoMapper.csproj", "{730E469A-E6FE-4B28-BA74-9DAF21168AFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{AA122E35-783A-4018-8D8D-DD11607F5677}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA122E35-783A-4018-8D8D-DD11607F5677}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA122E35-783A-4018-8D8D-DD11607F5677}.Release|Any CPU.Build.0 = Release|Any CPU
+		{730E469A-E6FE-4B28-BA74-9DAF21168AFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{730E469A-E6FE-4B28-BA74-9DAF21168AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{730E469A-E6FE-4B28-BA74-9DAF21168AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{730E469A-E6FE-4B28-BA74-9DAF21168AFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{001954AE-70C1-4BEB-9776-F719B68B2029} = {A4340378-C02F-455B-B483-CFE463D519A5}
 		{9BD36924-43EA-4582-85FC-4FC880EE80BC} = {A4340378-C02F-455B-B483-CFE463D519A5}
 		{AA122E35-783A-4018-8D8D-DD11607F5677} = {A4340378-C02F-455B-B483-CFE463D519A5}
+		{730E469A-E6FE-4B28-BA74-9DAF21168AFD} = {A4340378-C02F-455B-B483-CFE463D519A5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A803BBD1-8ED5-4D8A-8B8B-61A9CEFB3F5C}
