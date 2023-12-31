@@ -1,4 +1,4 @@
-﻿using BlogWebApi.Domain.DTOs;
+﻿using BlogWebApi.Domain.Models;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,7 +16,7 @@ namespace BlogWebApi.Domain.Entities
         {
         }
 
-        public Author(NewAuthorDTO dto)
+        public Author(NewAuthorModel dto)
         {
             this.Name = dto.Name;
             this.Photo = dto.Photo;

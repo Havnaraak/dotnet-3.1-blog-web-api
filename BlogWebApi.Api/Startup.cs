@@ -2,14 +2,16 @@ using BlogWebApi.Application.Authors.Commands.CreateAuthor;
 using BlogWebApi.Infrastructure.AutoMapper;
 using BlogWebApi.Infrastructure.CrossCutting.Interfaces;
 using BlogWebApi.Infrastructure.Data.Data.Context;
+using BlogWebApi.Infrastructure.Data.Middleware;
 using BlogWebApi.Infrastructure.Data.Repositories;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using System;
 
 namespace BlogWebApi.Api
 {
@@ -42,6 +44,10 @@ namespace BlogWebApi.Api
                 opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
 
+            services.AddValidatorsFromAssemblyContaining<CreateAuthorCommandValidator>();
+            services.AddFluentValidationAutoValidation();
+            services.AddFluentValidationClientsideAdapters();
+
             services.AddSwaggerGen(opt =>
             {
                 opt.SwaggerDoc("v1", new OpenApiInfo { Title = "BlogWebApi", Version = "v1" });
@@ -68,6 +74,8 @@ namespace BlogWebApi.Api
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseMiddleware(typeof(ErrorMiddleware));
 
             app.UseEndpoints(endpoints =>
             {

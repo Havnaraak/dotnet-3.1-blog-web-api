@@ -1,6 +1,6 @@
-﻿namespace BlogWebApi.Domain.DTOs
+﻿namespace BlogWebApi.Domain.Models
 {
-    public class NewAuthorDTO
+    public class NewAuthorModel
     {
         public string Name { get; set; }
 
