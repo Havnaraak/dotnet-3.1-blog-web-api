@@ -1,9 +1,9 @@
-﻿using BlogWebApi.Domain.Models;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System;
 using System.Net;
 using System.Threading.Tasks;
+using BlogWebApi.Domain.Models.Errors;
 
 namespace BlogWebApi.Infrastructure.Data.Middleware
 {
@@ -30,15 +30,12 @@ namespace BlogWebApi.Infrastructure.Data.Middleware
 
         private async Task HandleExceptionAsync(HttpContext context, Exception ex)
         {
-            ErrorModel errorModel;
-            errorModel = new ErrorModel(HttpStatusCode.InternalServerError.ToString(), $"{ex.Message} {ex.InnerException?.Message}");
+            var errorModel = new ErrorModel(HttpStatusCode.InternalServerError.ToString(), $"{ex.Message} {ex.InnerException?.Message}");
 
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             context.Response.ContentType = "application/json";
 
             await context.Response.WriteAsync(JsonConvert.SerializeObject(errorModel));
-
-            return;
         }
     }
 }

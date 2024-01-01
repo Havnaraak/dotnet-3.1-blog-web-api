@@ -8,7 +8,7 @@ namespace BlogWebApi.Infrastructure.Data.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
-        public readonly IDBContext _dbContext;
+        private readonly IDBContext _dbContext;
         private Dictionary<Type, object> _repositories;
 
         public UnitOfWork(IDBContext dBContext)

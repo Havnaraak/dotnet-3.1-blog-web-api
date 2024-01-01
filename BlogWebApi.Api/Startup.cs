@@ -1,5 +1,5 @@
-using BlogWebApi.Application.Authors.Commands.CreateAuthor;
 using BlogWebApi.Application.Common.Validators;
+using BlogWebApi.Application.Requests.Authors.Commands.CreateAuthor;
 using BlogWebApi.Infrastructure.AutoMapper;
 using BlogWebApi.Infrastructure.CrossCutting.Interfaces;
 using BlogWebApi.Infrastructure.Data.Data.Context;
