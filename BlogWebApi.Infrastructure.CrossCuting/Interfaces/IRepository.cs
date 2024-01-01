@@ -12,8 +12,10 @@ namespace BlogWebApi.Infrastructure.CrossCutting.Interfaces
 
         void Update<TEntity>(TEntity entity) where TEntity : T;
 
-        IQueryable<T> Find(Expression<Func<T, bool>> predicate);
+        IQueryable<T> FindBy(Expression<Func<T, bool>> predicate);
 
-        IQueryable<T> Get();
+        IQueryable<T> GetAll();
+
+        bool Exists(Expression<Func<T, bool>> predicate);
     }
 }

@@ -21,14 +21,19 @@ namespace BlogWebApi.Infrastructure.Data.Repositories
         
         public void Update<TEntity>(TEntity entity) where TEntity : T => _dbSet.Update(entity);
 
-        public IQueryable<T> Find(Expression<Func<T, bool>> predicate)
+        public IQueryable<T> FindBy(Expression<Func<T, bool>> predicate)
         {
             return _dbSet.Where(predicate);
         }
 
-        public IQueryable<T> Get()
+        public IQueryable<T> GetAll()
         {
             return _dbSet;
+        }
+
+        public bool Exists(Expression<Func<T, bool>> predicate)
+        {
+            return _dbSet.Any(predicate);
         }
     }
 }

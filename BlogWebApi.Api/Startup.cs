@@ -1,4 +1,5 @@
 using BlogWebApi.Application.Authors.Commands.CreateAuthor;
+using BlogWebApi.Application.Common.Validators;
 using BlogWebApi.Infrastructure.AutoMapper;
 using BlogWebApi.Infrastructure.CrossCutting.Interfaces;
 using BlogWebApi.Infrastructure.Data.Data.Context;
@@ -44,7 +45,9 @@ namespace BlogWebApi.Api
                 opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
 
-            services.AddValidatorsFromAssemblyContaining<CreateAuthorCommandValidator>();
+            services.AddMvc();
+
+            services.AddValidatorsFromAssembly(typeof(ValidatorBase<>).Assembly);
             services.AddFluentValidationAutoValidation();
             services.AddFluentValidationClientsideAdapters();
 
