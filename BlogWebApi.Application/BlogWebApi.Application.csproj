@@ -5,14 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlogWebApi.Domain\BlogWebApi.Domain.csproj" />
-    <ProjectReference Include="..\BlogWebApi.Infrastructure.CrossCuting\BlogWebApi.Infrastructure.CrossCutting.csproj" />
-    <ProjectReference Include="..\BlogWebApi.Infrastructure.Data\BlogWebApi.Infrastructure.Data.csproj" />
+    <Compile Remove="Posts\**" />
+    <EmbeddedResource Remove="Posts\**" />
+    <None Remove="Posts\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Posts\Commands\" />
-    <Folder Include="Posts\Queries\" />
+    <ProjectReference Include="..\BlogWebApi.Domain\BlogWebApi.Domain.csproj" />
+    <ProjectReference Include="..\BlogWebApi.Infrastructure.CrossCuting\BlogWebApi.Infrastructure.CrossCutting.csproj" />
+    <ProjectReference Include="..\BlogWebApi.Infrastructure.Data\BlogWebApi.Infrastructure.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>

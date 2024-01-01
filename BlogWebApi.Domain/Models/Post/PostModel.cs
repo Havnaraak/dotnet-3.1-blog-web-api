@@ -1,6 +1,6 @@
 ﻿namespace BlogWebApi.Domain.Models
 {
-    public class NewPostModel
+    public class PostModel
     {
 
     }

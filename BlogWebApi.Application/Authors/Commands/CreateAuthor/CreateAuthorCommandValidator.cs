@@ -1,8 +1,9 @@
-﻿using FluentValidation;
+﻿using BlogWebApi.Application.Common.Validators;
+using FluentValidation;
 
 namespace BlogWebApi.Application.Authors.Commands.CreateAuthor
 {
-    public class CreateAuthorCommandValidator : AbstractValidator<CreateAuthorCommand>
+    public class CreateAuthorCommandValidator : ValidatorBase<CreateAuthorCommand>
     {
         public CreateAuthorCommandValidator()
         {
@@ -11,7 +12,8 @@ namespace BlogWebApi.Application.Authors.Commands.CreateAuthor
                 .Length(2, 100);
 
             RuleFor(a => a.Photo)
-                .NotNull();
+                .NotNull()
+                .Length(2, 100);
         }
     }
 }

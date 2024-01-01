@@ -6,22 +6,28 @@ namespace BlogWebApi.Domain.Entities
 {
     public partial class Author : BaseEntity
     {
-        public string Name { get; set; }
+        protected Author()
+        {
+        }
 
-        public string Photo { get; set; }
+        public Author(AuthorModel autorModel)
+        {
+            this.Name = autorModel.Name;
+            this.Photo = autorModel.Photo;
+        }
+
+        public string Name { get; private set; }
+
+        public string Photo { get; private set; }
 
         public IEnumerable<Post> Posts { get; set; }
 
-        public Author()
+        public void UpdateAuthor(AuthorModel autorModel)
         {
+            this.Name = autorModel.Name;
+            this.Photo = autorModel.Photo;
         }
 
-        public Author(NewAuthorModel dto)
-        {
-            this.Name = dto.Name;
-            this.Photo = dto.Photo;
-        }
-
-        protected void AddPost(Post post) => Posts.ToList().Add(post);
+        public void AddPost(Post post) => Posts.ToList().Add(post);
     }
 }

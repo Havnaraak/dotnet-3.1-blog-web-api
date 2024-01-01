@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BlogWebApi.Application.Authors.Commands.CreateAuthor
 {
-    public class CreateAuthorCommand : IRequest<CreateAuthorCommandResponse>, IMapTo<NewAuthorModel>
+    public class CreateAuthorCommand : IRequest<CreateAuthorCommandResponse>, IMapTo<AuthorModel>
     {
         public string Name { get; set; }
 
@@ -17,7 +17,7 @@ namespace BlogWebApi.Application.Authors.Commands.CreateAuthor
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<CreateAuthorCommand, NewAuthorModel>(MemberList.Destination);
+            profile.CreateMap<CreateAuthorCommand, AuthorModel>(MemberList.Destination);
         }
 
     }
@@ -37,7 +37,7 @@ namespace BlogWebApi.Application.Authors.Commands.CreateAuthor
         {
             var repository = _unitOfWork.GetRepository<Author>();
 
-            var authorDto = _mapper.Map<CreateAuthorCommand, NewAuthorModel>(request);
+            var authorDto = _mapper.Map<CreateAuthorCommand, AuthorModel>(request);
 
             var author = new Author(authorDto);
 
