@@ -54,6 +54,7 @@ namespace BlogWebApi.Api
             services.AddSwaggerGen(opt =>
             {
                 opt.SwaggerDoc("v1", new OpenApiInfo { Title = "BlogWebApi", Version = "v1" });
+                opt.EnableAnnotations();
             });
         }
 
