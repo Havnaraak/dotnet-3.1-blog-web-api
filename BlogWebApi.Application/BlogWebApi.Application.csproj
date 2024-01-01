@@ -5,12 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Posts\**" />
-    <EmbeddedResource Remove="Posts\**" />
-    <None Remove="Posts\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\BlogWebApi.Domain\BlogWebApi.Domain.csproj" />
     <ProjectReference Include="..\BlogWebApi.Infrastructure.CrossCuting\BlogWebApi.Infrastructure.CrossCutting.csproj" />
     <ProjectReference Include="..\BlogWebApi.Infrastructure.Data\BlogWebApi.Infrastructure.Data.csproj" />
@@ -19,6 +13,10 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Requests\" />
   </ItemGroup>
 
 </Project>

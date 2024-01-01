@@ -1,10 +1,10 @@
-﻿ using BlogWebApi.Application.Authors.Commands.CreateAuthor;
-using BlogWebApi.Application.Authors.Commands.DeleteAuthor;
-using BlogWebApi.Application.Authors.Commands.UpdateAuthor;
-using BlogWebApi.Application.Authors.Queries.GetAuthors;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Threading.Tasks;
+using BlogWebApi.Application.Requests.Authors.Commands.CreateAuthor;
+using BlogWebApi.Application.Requests.Authors.Commands.DeleteAuthor;
+using BlogWebApi.Application.Requests.Authors.Commands.UpdateAuthor;
+using BlogWebApi.Application.Requests.Authors.Queries.GetAuthors;
 
 namespace BlogWebApi.Api.Controllers
 {
@@ -36,7 +36,7 @@ namespace BlogWebApi.Api.Controllers
         [SwaggerOperation("Atualiza um autor com base no identificador")]
         [SwaggerResponse(200, "Atualizado com sucesso")]
         [SwaggerResponse(500, "Internal Server Error")]
-        public async Task<IActionResult> UpdateAuthorAsync([FromRoute] long authorId, [FromBody] UpdateAuthorCommand command)
+        public async Task<IActionResult> UpdateAuthorAsync([FromBody] UpdateAuthorCommand command)
         {
             var result = await Mediator.Send(command);
             return Ok(result);
@@ -46,7 +46,7 @@ namespace BlogWebApi.Api.Controllers
         [SwaggerOperation("Deleta um autor com base no identificador")]
         [SwaggerResponse(200, "Excluido com sucesso")]
         [SwaggerResponse(500, "Internal Server Error")]
-        public async Task<IActionResult> DeleteAuthorAsync([FromRoute] long authorId, [FromBody] DeleteAuthorCommand command)
+        public async Task<IActionResult> DeleteAuthorAsync([FromBody] DeleteAuthorCommand command)
         {
             await Mediator.Send(command);
             return Ok();

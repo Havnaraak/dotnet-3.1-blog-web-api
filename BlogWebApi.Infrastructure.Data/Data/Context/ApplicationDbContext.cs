@@ -9,14 +9,14 @@ namespace BlogWebApi.Infrastructure.Data.Data.Context
 {
     public partial class ApplicationDbContext : DbContext, IDBContext
     {
-        public IConfiguration _configuration;
+        private readonly IConfiguration _configuration;
 
         public ApplicationDbContext(IConfiguration configuration)
         {
             _configuration = configuration;
         }
 
-        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken)
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             while (true)
             {
