@@ -1,4 +1,5 @@
 ﻿using System;
+using BlogWebApi.Domain.Common.Validation;
 using BlogWebApi.Domain.Models;
 
 namespace BlogWebApi.Domain.Entities
@@ -11,6 +12,8 @@ namespace BlogWebApi.Domain.Entities
 
         public Post(PostModel postModel)
         {
+            ValidateModel(postModel);
+            
             this.Title = postModel.Title;
             this.CreationDate = DateTime.Now;
             this.Content = postModel.Content;
@@ -27,9 +30,19 @@ namespace BlogWebApi.Domain.Entities
 
         public void UpdatePost(PostModel postModel)
         {
+            ValidateModel(postModel);
+            
             this.Title = postModel.Title;
             this.Content = postModel.Content;
             this.Author = postModel.Author;
+        }
+
+        private void ValidateModel(PostModel postModel)
+        {
+            ValidationExtensions.NullOrEmpty(postModel.Title, nameof(postModel.Title));
+            ValidationExtensions.NullOrEmpty(postModel.Content, nameof(postModel.Content));
+            ValidationExtensions.CheckLength(postModel.Title, nameof(postModel.Title), 2, 80);
+            ValidationExtensions.CheckLength(postModel.Content, nameof(postModel.Content), 2, 300);
         }
     }
 }

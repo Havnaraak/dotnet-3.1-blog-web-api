@@ -13,7 +13,7 @@ namespace BlogWebApi.Application.Requests.Authors.Commands.CreateAuthor
 
             RuleFor(a => a.Photo)
                 .NotNull()
-                .Length(2, 100);
+                .Length(2, 300);
         }
     }
 }

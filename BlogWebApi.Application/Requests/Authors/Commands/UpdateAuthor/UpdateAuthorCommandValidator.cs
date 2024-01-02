@@ -19,7 +19,7 @@ namespace BlogWebApi.Application.Requests.Authors.Commands.UpdateAuthor
 
             RuleFor(a => a.Photo)
                 .NotNull()
-                .Length(2, 100);
+                .Length(2, 300);
         }
 
         private bool IsValidId(long id) => UnitOfWork.GetRepository<Author>().Exists(a => a.Id == id);
