@@ -8,6 +8,7 @@ Bibliotecas Utilizadas na API:
   <li>AutoMapper</li>
   <li>MediatR</li>
   <li>FluentValidations</li>
+  <li>XUnit</li>
 </ul>
 
 
